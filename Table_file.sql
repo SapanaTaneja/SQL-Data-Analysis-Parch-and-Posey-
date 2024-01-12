@@ -9154,6 +9154,11 @@ CREATE TABLE orders (
 	poster_amt_usd numeric(10,2),
 	total_amt_usd numeric(10,2)
 );
+ALTER TABLE orders
+CHANGE `gloss_qty` `gross_qty` INT;
+ALTER TABLE orders
+CHANGE `gloss_amt_usd` `gross_amt_usd` numeric(10,2);
+
 INSERT INTO orders VALUES (1,1001,'2015-10-06 17:31:14',123,22,24,169,613.77,164.78,194.88,973.43);
 INSERT INTO orders VALUES (2,1001,'2015-11-05 03:34:33',190,41,57,288,948.1,307.09,462.84,1718.03);
 INSERT INTO orders VALUES (3,1001,'2015-12-04 04:21:55',85,47,0,132,424.15,352.03,0,776.18);
