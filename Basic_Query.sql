@@ -162,13 +162,13 @@ WHERE name = 'EOG Resources';
 /* USING ARITHMETIC OPERATORS */
 
 /*
-Create a column that divides the gross_amount_usd by the gross_quantity to find the unit price for the standard paper
+Create a column that divides the gloss_amount_usd by the gloss_quantity to find the unit price for the standard paper
 paper for each order. Limit the results to the first 10 orders, and include the id and the account_id field.
 */
 
 SELECT  id,
            account_id,
-		   (gross_amt_usd/gross_qty) AS unit_price
+		   (gloss_amt_usd/gloss_qty) AS unit_price
 FROM orders;
 
 
@@ -275,7 +275,7 @@ WHERE name NOT LIKE '%one%';
 /* USING AND and BETWEEN operators */
 
 /*
-Write a query that returns all the orders where the standard_qty is over 1000, the poster_qty is 0, and the gross_qty is 0.
+Write a query that returns all the orders where the standard_qty is over 1000, the poster_qty is 0, and the gloss_qty is 0.
 */
 
 
@@ -283,7 +283,7 @@ SELECT  *
 FROM orders 
 WHERE standard_qty > 1000
 	AND poster_qty = 0
-	AND gross_qty = 0;
+	AND gloss_qty = 0;
 
 
 /*
@@ -297,12 +297,12 @@ WHERE name NOT LIKE 'C%'
 
 
 /*
-Write a query that displays the order date and gross_qty data for all orders where gross_qty data is between 24 and 29.
+Write a query that displays the order date and gloss_qty data for all orders where gloss_qty data is between 24 and 29.
 */
 
-SELECT occurred_at, gross_qty
+SELECT occurred_at, gloss_qty
 FROM orders 
-WHERE gross_qty BETWEEN 24 AND 29;
+WHERE gloss_qty BETWEEN 24 AND 29;
 
 
 /*
